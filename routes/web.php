@@ -24,4 +24,7 @@ Route::get('/room/favarite', 'RoomsController@favarite');
 Route::get('/room/add', 'RoomsController@add');
 Route::get('/room/delete', 'RoomsController@delete');
 Route::get('/room/sort', 'RoomsController@sort');
-Route::get('/room/logout', 'RoomsController@logout');
+Route::get('/room/logout    ', 'RoomsController@logout');
+
+//chat
+Route::get('/screen/chat', 'ScreensController@chat');
