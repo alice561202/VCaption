@@ -77,3 +77,18 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## ディレクトリ
+├── app : アプリケーションの実装コードのほとんどをここに格納しています。<br/>
+├── bootstrap : アプリケーションの初期化に関する設定ファイルを格納します。<br/>
+├── common : appフォルダで使用するコードの基底クラス群を格納します。<br/>
+├── config : コンフィグや定数設定を格納します。<br/>
+├── database : DBの接続設定やマイグレーションファイルなどを格納します。<br/>
+├── public : js/cssやfaviconなど、ドキュメントルートに配置するファイルを格納します。<br/>
+├── resources : Bladeのテンプレートファイルを格納します。<br/>
+├── routes : ルーティングに関する設定ファイルを格納します。<br/>
+├── storage : アプリケーションログやキャッシュファイルが格納されます。<br/>
+├── tests : テストコードを格納します。<br/>
+├── vendor : composerで取得した外部ライブラリが格納されます。<br/>
+├── .env.example : 起動時の環境変数設定を .env として作成する際のベースファイルです。<br/>
+└── composer.json : composerで管理しているライブラリの定義ファイルです。<br/>
