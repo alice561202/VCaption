@@ -1,329 +1,519 @@
+<!DOCTYPE html>
+<html lang="ja">
+@include('head')
+<body>
 <div class="wrapper">
-    <header class="header">
-      <div class="headerInner">
-        <div class="createRoom">
-          <input type="checkbox" name="createRoom" id="createRoom" class="checkCreateRoom" hidden>
-          <label for="createRoom" class="btnCreateRoom">
-            <i class="fas fa-plus"></i>
-            <span>新規ルーム作成</span>
-          </label>
-          <label for="createRoom" class="createRoomModal backgroundLayer dn"></label>
-          <div class="createRoomModalInner actionModal dn">
-            <form action="">
-              <dl class="createRoomConditions">
-                <dt>新規ルーム名</dt>
-                <dd>
-                  <input type="text" name="createRoomName" class="createRoomName">
-                </dd>
-                <dt>招待メンバー</dt>
-                <dd>
-                  <div class="createRoomMember">
-                    <ul class="createRoomMemberList">
-                      <li>名字 名前<i class="fas fa-times"></i></li>
-                      <li>名字 名前<i class="fas fa-times"></i></li>
-                      <li>名字 名前<i class="fas fa-times"></i></li>
-                      <li>名字 名前<i class="fas fa-times"></i></li>
-                      <li>名字 名前<i class="fas fa-times"></i></li>
-                      <li>名字 名前<i class="fas fa-times"></i></li>
-                      <li>名字 名前<i class="fas fa-times"></i></li>
-                      <li>名字 名前<i class="fas fa-times"></i></li>
-                      <li>名字 名前<i class="fas fa-times"></i></li>
-                      <li>名字 名前<i class="fas fa-times"></i></li>
-                      <li>名字 名前<i class="fas fa-times"></i></li>
-                      <li>名字 名前<i class="fas fa-times"></i></li>
-                      <li>名字 名前<i class="fas fa-times"></i></li>
-                    </ul>
-                  </div>
-                  <p class="numberOfSelected">1 名</p>
-                </dd>
-              </dl>
-              <div class="selectAll">
-                <a href="javascript:void(0)">全選択</a>
-              </div>
-              <ul class="selectMemberList">
-                <li>
-                  <input type="checkbox" name="selectMember" id="userId">
-                  <label for="userId" class="selectMember">名字 名前</label>
-                </li>
-              </ul>
-              <input type="submit" value="ルーム作成">
-            </form>
-          </div>
-        </div>
-        <p class="accountName">
-          <i class="fas fa-user-tie"></i>
-          <span>$アカウント名</span>
-        </p>
-        <div class="logOut">
-          <a href="javascript:void(0)">
-            <i class="fas fa-sign-out-alt"></i>
-          </a>
-        </div>
-      </div>
-    </header>
+    @include('header')
     <main class="mainContentWrap">
-      <dl class="roomCategory">
-        <dt>お気に入り</dt>
-        <dd>
-          <ul class="roomList">
-            <li>
-              <p class="roomImg active" style="background-image: url('/images/room_img_1.jpg');">
-                <span class="roomName">$ルーム名</span>
-                <i class="fas fa-heart favoriteIcon dn"></i>
-                <i class="far fa-heart favoriteIcon"></i>
-              </p>
-              <div class="roomDetailWrap">
-                <input type="radio" name="roomDetail" class="showRoomDetail" id="roomId1" hidden>
-                <label for="roomId1" class="btnShowRoomDetail">詳細を見る</label>
-                <div class="roomDetail dn">
-                  <label for="roomId1" class="closeRoomDetail">
-                    <i class="fas fa-times"></i>
-                  </label>
-                  <div class="roomImg" style="background-image: $画像path;">
-                    <i class="fas fa-images"></i>
-                  </div>
-                  <div class="editRoomName">
-                    <form action="">
-                      <input type="text" name="roomName" value="$ルーム名">
-                      <i class="fas fa-edit"></i>
-                    </form>
-                  </div>
-                  <div class="addFavoriteRoom">
-                    <form action="">
-                      <input type="checkbox" name="favoriteRoom" id="addFavoriteRoomId1">
-                      <label for="addFavoriteRoomId1" class="btnFavoriteRoom">お気に入り</label>
-                      <i class="fas fa-heart dn"></i>
-                      <i class="far fa-heart"></i>
-                    </form>
-                  </div>
-                  <ul class="roomMemberList">
+        <dl class="roomCategory">
+            @foreach($rooms as $room)
+            <dt>{{Lang::get('const.common.room_favarite')}}</dt>
+            <dd>
+                <ul class="roomList">
                     <li>
-                      <i class="fas fa-crown"></i>
-                      <p class="joinedRoomMember active">$メンバー名</p>
-                      <div class="deleteRoomMember">
-                        <input type="checkbox" name="deleteRoomMember" id="leaveMemberRoomId1">
-                        <label for="leaveMemberRoomId1" class="btnDeleteRoomMember">退出</label>
-                        <label for="leaveMemberRoomId1" class="backgroundLayer dn"></label>
-                        <div class="actionModal dn">
-                          <p class="descriptionAction">
-                            メンバーを退出させますか？
-                          </p>
-                          <ul class="actionBtn">
-                            <li class="btnCancel">
-                              <a href="#">キャンセル</a>
-                            </li>
-                            <li class="btnSubmit">
-                              <a href="#">退出</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                  <div class="addMember">
-                    <i class="fas fa-user-plus"></i>
-                  </div>
-                  <ul class="actionBtnList">
-                    <li class="startChat">
-                      <input type="checkbox" name="startChat" id="startChatRoomId1">
-                      <label for="startChatRoomId1" class="btnStartChat">通話</label>
-                      <label for="startChatRoomId1" class="backgroundLayer dn"></label>
-                      <div class="actionModal dn">
-                        <p class="descriptionAction">
-                          ミーティングを開始しますか？
+                        <!--roomImg-->
+                        <p class="roomImg active" style="background-image: url('/images/{{$room['room_img']}}');">
+                            <span class="roomName">{{$room['room_name']}}</span>
+                            <i class="fas fa-heart favoriteIcon dn"></i>
+                            <i class="far fa-heart favoriteIcon"></i>
                         </p>
-                        <ul class="actionBtn">
-                          <li class="btnCancel">
-                            <a href="#">キャンセル</a>
-                          </li>
-                          <li class="btnSubmit">
-                            <a href="#">OK</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="deleteChatRoom">
-                      <input type="checkbox" name="deleteChatRoom" id="deleteRoomId1">
-                      <label for="deleteRoomId1" class="btnDeleteChatRoom">削除</label>
-                      <label for="deleteRoomId1" class="backgroundLayer dn"></label>
-                        <div class="actionModal dn">
-                          <p class="descriptionAction">
-                            一度削除したルームは元に戻せません。<br>
-                            ルームを削除しますか？
-                          </p>
-                          <ul class="actionBtn">
-                            <li class="btnCancel">
-                              <a href="#">キャンセル</a>
-                            </li>
-                            <li class="btnSubmit">
-                              <a href="#">削除</a>
-                            </li>
-                          </ul>
-                        </div>
-                    </li>
-                    <li class="leaveChatRoom">
-                      <input type="checkbox" name="leaveChatRoom" id="leaveRoomId1">
-                      <label for="leaveRoomId1" class="btnLeaveChatRoom">退出</label>
-                      <label for="leaveRoomId1" class="backgroundLayer dn"></label>
-                      <div class="actionModal dn">
-                        <p class="descriptionAction">
-                          <span>あなたはこのルームの管理者になっています。<br></span>
-                          ルームを退出しますか？
-                        </p>
-                        <ul class="actionBtn">
-                          <li class="btnCancel">
-                            <a href="#">キャンセル</a>
-                          </li>
-                          <li class="btnSubmit">
-                            <a href="#">退出</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li>
-              <p class="roomImg active" style="background-image: url('/images/room_img_1.jpg');">
-                <span class="roomName">$ルーム名</span>
-                <i class="fas fa-heart favoriteIcon dn"></i>
-                <i class="far fa-heart favoriteIcon"></i>
-              </p>
-              <div class="roomDetailWrap">
-                <input type="radio" name="roomDetail" class="showRoomDetail" id="roomId1" hidden>
-                <label for="roomId1" class="btnShowRoomDetail">詳細を見る</label>
-              </div>
-            </li>
-            <li>
-              <p class="roomImg active" style="background-image: url('/images/room_img_1.jpg');">
-                <span class="roomName">$ルーム名</span>
-                <i class="fas fa-heart favoriteIcon dn"></i>
-                <i class="far fa-heart favoriteIcon"></i>
-              </p>
-              <div class="roomDetailWrap">
-                <input type="radio" name="roomDetail" class="showRoomDetail" id="roomId1" hidden>
-                <label for="roomId1" class="btnShowRoomDetail">詳細を見る</label>
-              </div>
-            </li>
-            <li>
-              <p class="roomImg active" style="background-image: url('/images/room_img_1.jpg');">
-                <span class="roomName">$ルーム名</span>
-                <i class="fas fa-heart favoriteIcon dn"></i>
-                <i class="far fa-heart favoriteIcon"></i>
-              </p>
-              <div class="roomDetailWrap">
-                <input type="radio" name="roomDetail" class="showRoomDetail" id="roomId1" hidden>
-                <label for="roomId1" class="btnShowRoomDetail">詳細を見る</label>
-              </div>
-            </li>
-            <li>
-              <p class="roomImg active" style="background-image: url('/images/room_img_1.jpg');">
-                <span class="roomName">$ルーム名</span>
-                <i class="fas fa-heart favoriteIcon dn"></i>
-                <i class="far fa-heart favoriteIcon"></i>
-              </p>
-              <div class="roomDetailWrap">
-                <input type="radio" name="roomDetail" class="showRoomDetail" id="roomId1" hidden>
-                <label for="roomId1" class="btnShowRoomDetail">詳細を見る</label>
-              </div>
-            </li>
-            <li>
-              <p class="roomImg active" style="background-image: url('/images/room_img_1.jpg');">
-                <span class="roomName">$ルーム名</span>
-                <i class="fas fa-heart favoriteIcon dn"></i>
-                <i class="far fa-heart favoriteIcon"></i>
-              </p>
-              <div class="roomDetailWrap">
-                <input type="radio" name="roomDetail" class="showRoomDetail" id="roomId1" hidden>
-                <label for="roomId1" class="btnShowRoomDetail">詳細を見る</label>
-              </div>
-            </li>
-            <li>
-              <p class="roomImg active" style="background-image: url('/images/room_img_1.jpg');">
-                <span class="roomName">$ルーム名</span>
-                <i class="fas fa-heart favoriteIcon dn"></i>
-                <i class="far fa-heart favoriteIcon"></i>
-              </p>
-              <div class="roomDetailWrap">
-                <input type="radio" name="roomDetail" class="showRoomDetail" id="roomId1" hidden>
-                <label for="roomId1" class="btnShowRoomDetail">詳細を見る</label>
-              </div>
-            </li>
-            <li>
-              <p class="roomImg active" style="background-image: url('/images/room_img_1.jpg');">
-                <span class="roomName">$ルーム名</span>
-                <i class="fas fa-heart favoriteIcon dn"></i>
-                <i class="far fa-heart favoriteIcon"></i>
-              </p>
-              <div class="roomDetailWrap">
-                <input type="radio" name="roomDetail" class="showRoomDetail" id="roomId1" hidden>
-                <label for="roomId1" class="btnShowRoomDetail">詳細を見る</label>
-              </div>
-            </li>
-            <li>
-              <p class="roomImg active" style="background-image: url('/images/room_img_1.jpg');">
-                <span class="roomName">$ルーム名</span>
-                <i class="fas fa-heart favoriteIcon dn"></i>
-                <i class="far fa-heart favoriteIcon"></i>
-              </p>
-              <div class="roomDetailWrap">
-                <input type="radio" name="roomDetail" class="showRoomDetail" id="roomId1" hidden>
-                <label for="roomId1" class="btnShowRoomDetail">詳細を見る</label>
-              </div>
-            </li>
-            <li>
-              <p class="roomImg active" style="background-image: url('/images/room_img_1.jpg');">
-                <span class="roomName">$ルーム名</span>
-                <i class="fas fa-heart favoriteIcon dn"></i>
-                <i class="far fa-heart favoriteIcon"></i>
-              </p>
-              <div class="roomDetailWrap">
-                <input type="radio" name="roomDetail" class="showRoomDetail" id="roomId1" hidden>
-                <label for="roomId1" class="btnShowRoomDetail">詳細を見る</label>
-              </div>
-            </li>
-            <li>
-              <p class="roomImg active" style="background-image: url('/images/room_img_1.jpg');">
-                <span class="roomName">$ルーム名</span>
-                <i class="fas fa-heart favoriteIcon dn"></i>
-                <i class="far fa-heart favoriteIcon"></i>
-              </p>
-              <div class="roomDetailWrap">
-                <input type="radio" name="roomDetail" class="showRoomDetail" id="roomId1" hidden>
-                <label for="roomId1" class="btnShowRoomDetail">詳細を見る</label>
-              </div>
-            </li>
-            <li>
-              <p class="roomImg active" style="background-image: url('/images/room_img_1.jpg');">
-                <span class="roomName">$ルーム名</span>
-                <i class="fas fa-heart favoriteIcon dn"></i>
-                <i class="far fa-heart favoriteIcon"></i>
-              </p>
-              <div class="roomDetailWrap">
-                <input type="radio" name="roomDetail" class="showRoomDetail" id="roomId1" hidden>
-                <label for="roomId1" class="btnShowRoomDetail">詳細を見る</label>
-              </div>
-            </li>
-            <li>
-              <p class="roomImg active" style="background-image: url('/images/room_img_1.jpg');">
-                <span class="roomName">$ルーム名</span>
-                <i class="fas fa-heart favoriteIcon dn"></i>
-                <i class="far fa-heart favoriteIcon"></i>
-              </p>
-              <div class="roomDetailWrap">
-                <input type="radio" name="roomDetail" class="showRoomDetail" id="roomId1" hidden>
-                <label for="roomId1" class="btnShowRoomDetail">詳細を見る</label>
-              </div>
-            </li>
-          </ul>
-        </dd>
-        <dt>作成ルーム</dt>
-        <dd></dd>
-        <dt>参加ルーム</dt>
-        <dd></dd>
-      </dl>
+                        <!--END roomImg-->
 
+                        <div class="roomDetailWrap buttonWrap">
+                            <button class="jscBtnShowRoomDetail btnShowRoomDetail button">詳細を見る</button>
+                            <!--サイドバー-->
+                            <div class="jscRoomDetail roomDetail">
+                                <div class="roomDetailInner">
+                                    <div class="closeRoomDetail">
+                                        <label for="roomId1" class="jscBtnCloseRoomDetail btnCloseRoomDetail">
+                                            <i class="fas fa-times"></i>
+                                        </label>
+                                    </div>
+                                    <div class="roomImg" style="background-image: url('/images/{{$room['room_img']}}');">
+                                        <button class="btnEditRoomImg">
+                                            <i class="fas fa-images icnEditRoomImg"></i>
+                                        </button>
+                                    </div>
+                                    <div class="editRoomNameWrap">
+                                        <form action="">
+                                            <input type="text" name="roomName" value="{{$room['room_name']}}" class="jscEditRoomName editRoomName" disabled>
+                                            <button class="jscBtnEditRoomName btnEditRoomName"><i class="fas fa-edit"></i></button>
+                                            <div class="jscSaveRoomName saveRoomName buttonWrap dn">
+                                                <p href="javascript:void(0);" class="btnSaveRoomName button">保存</p>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="addFavoriteRoom buttonWrap">
+                                        <form action="">
+                                            <button class="btnFavoriteRoom button addedFavorite">
+                                                {{Lang::get('const.common.room_favarite')}}
+                                                <i class="fas fa-heart favoriteIcon dn"></i>
+                                                <i class="far fa-heart favoriteIcon"></i>
+                                            </button>
+                                        </form>
+                                    </div><!--addFavoriteRoom buttonWrap-->
+                                    <ul class="roomMemberList">
+                                        <li>
+                                            <i class="fas fa-crown icnCrown"></i>
+                                            <p class="joinedRoomMember active">$メンバー名</p>
+                                            <div class="jscModalParent deleteRoomMember buttonWrap">
+                                                <button class="jscBtnOpenModal btnDeleteRoomMember button">{{Lang::get('const.common.exit')}}</button>
+                                                <div class="jscBackgroundLayer backgroundLayer dn"></div>
+                                                <div class="jscActionModal actionModal dn">
+                                                    <p class="descriptionAction">
+                                                        メンバーを退出させますか？
+                                                    </p>
+                                                    <ul class="actionBtn">
+                                                        <li class="buttonWrap">
+                                                            <a href="javascript:void(0);" class="jscBtnCancel btnCancel button">{{Lang::get('const.common.cancel')}}</a>
+                                                        </li>
+                                                        <li class="buttonWrap">
+                                                            <a href="javascript:void(0);" class="btnSubmit button">{{Lang::get('const.common.exit')}}</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <div class="addMember">
+                                        <button class="jscBtnOpenModal">
+                                            <i class="fas fa-user-plus"></i>
+                                        </button>
+                                        <div for="addMember" class="jscBackgroundLayer backgroundLayer dn"></div>
+                                        <div class="jscActionModal actionModal editRoomModal dn">
+                                            <form action="">
+                                                <dl class="createRoomConditions">
+                                                    <dt>{{Lang::get('const.common.new_room_name')}}</dt>
+                                                    <dd>
+                                                        <div class="createRoomMember">
+                                                            <ul class="createRoomMemberList">
+                                                                <li>名字 名前<i class="fas fa-times"></i></li>
+                                                                <li>名字 名前<i class="fas fa-times"></i></li>
+                                                                <li>名字 名前<i class="fas fa-times"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <p class="numberOfSelected">1 名</p>
+                                                    </dd>
+                                                </dl>
+                                                <div class="selectAll buttonWrap">
+                                                    <a href="javascript:void(0)" class="button">{{Lang::get('const.common.select_all')}}</a>
+                                                </div>
+                                                <ul class="selectMemberList">
+                                                    @foreach($users as $user)
+                                                        <li>
+                                                            <input type="checkbox" name="selectMember" id="userId{{$user['user_id']}}" class="selectMemberCheck">
+                                                            <label for="userId1" class="selectMember">{{$user['user_name']}}</label>
+                                                            <input type="hidden" name="user_id" value="{{$user['user_id']}}">{{$user['user_id']}}</input>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                                <div class="submitCreateRoom buttonWrap">
+                                                    <button class="btnSubmitCreateRoom button">招待</button>
+                                                </div>
+                                            </form>
+                                        </div><!--END jscActionModal-->
+                                    </div><!--END addMember-->
+                                    <ul class="actionBtnList">
+                                        <li class="jscModalParent startChat buttonWrap">
+                                            <button for="startChatRoomId1" class="jscBtnOpenModal btnStartChat button">{{Lang::get('const.common.call')}}</button>
+                                            <div for="startChatRoomId1" class="jscBackgroundLayer backgroundLayer dn"></div>
+                                            <div class="jscActionModal actionModal dn">
+                                                <p class="descriptionAction">
+                                                    ミーティングを開始しますか？
+                                                </p>
+                                                <ul class="actionBtn">
+                                                    <li class="buttonWrap">
+                                                        <a href="javascript:void(0);" class="jscBtnCancel btnCancel button">{{Lang::get('const.common.cancel')}}</a>
+                                                    </li>
+                                                    <li class="buttonWrap">
+                                                        <a href="javascript:void(0);" class="btnOk button">OK</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="jscModalParent deleteChatRoom buttonWrap">
+                                            <button for="deleteRoomId1" class="jscBtnOpenModal btnDeleteChatRoom button">削除</button>
+                                            <div for="deleteRoomId1" class="jscBackgroundLayer backgroundLayer dn"></div>
+                                            <div class="jscActionModal actionModal dn">
+                                                <p class="descriptionAction">
+                                                    一度削除したルームは元に戻せません。<br>
+                                                    ルームを削除しますか？
+                                                </p>
+                                                <ul class="actionBtn">
+                                                    <li class="buttonWrap">
+                                                        <a href="javascript:void(0);" class="jscBtnCancel btnCancel button">キャンセル</a>
+                                                    </li>
+                                                    <li class="buttonWrap">
+                                                        <a href="javascript:void(0);" class="btnDelete button">削除</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="jscModalParent leaveChatRoom buttonWrap">
+                                            <label class="jscBtnOpenModal btnLeaveChatRoom button">退出</label>
+                                            <label class="jscBackgroundLayer backgroundLayer dn"></label>
+                                            <div class="jscActionModal actionModal dn">
+                                                <p class="descriptionAction">
+                                                    <span>あなたはこのルームの管理者になっています。<br></span>ルームを退出しますか？
+                                                </p>
+                                                <ul class="actionBtn">
+                                                    <li class="buttonWrap">
+                                                        <a href="javascript:void(0);" class="jscBtnCancel btnCancel button">キャンセル</a>
+                                                    </li>
+                                                    <li class="buttonWrap">
+                                                        <a href="javascript:void(0);" class="btnSubmit button">退出</a>
+                                                    </li>
+                                                </ul>
+                                            </div><!--END jscActionModal-->
+                                        </li>
+                                    </ul><!--actionBtnList-->
+                                </div><!--END roomDetailInner-->
+                            </div><!--END jscRoomDetail -->
+                        </div><!--END roomDetailWrap buttonWrap-->
+                    </li>
+                </ul>
+            </dd>
+            <!--作成ルーム-->
+            <dt>{{Lang::get('const.common.add_room')}}</dt>
+                <dd>
+                    <ul class="roomList">
+                        <li>
+                            <!--roomImg-->
+                            <p class="roomImg active" style="background-image: url('/images/{{$room['room_img']}}');">
+                                <span class="roomName">{{$room['room_name']}}</span>
+                                <i class="fas fa-heart favoriteIcon dn"></i>
+                                <i class="far fa-heart favoriteIcon"></i>
+                            </p>
+                            <!--END roomImg-->
+
+                            <div class="roomDetailWrap buttonWrap">
+                                <button class="jscBtnShowRoomDetail btnShowRoomDetail button">詳細を見る</button>
+                                <!--サイドバー-->
+                                <div class="jscRoomDetail roomDetail">
+                                    <div class="roomDetailInner">
+                                        <div class="closeRoomDetail">
+                                            <label for="roomId1" class="jscBtnCloseRoomDetail btnCloseRoomDetail">
+                                                <i class="fas fa-times"></i>
+                                            </label>
+                                        </div>
+                                        <div class="roomImg" style="background-image: url('/images/{{$room['room_img']}}');">
+                                            <button class="btnEditRoomImg">
+                                                <i class="fas fa-images icnEditRoomImg"></i>
+                                            </button>
+                                        </div>
+                                        <div class="editRoomNameWrap">
+                                            <form action="">
+                                                <input type="text" name="roomName" value="{{$room['room_name']}}" class="jscEditRoomName editRoomName" disabled>
+                                                <button class="jscBtnEditRoomName btnEditRoomName"><i class="fas fa-edit"></i></button>
+                                                <div class="jscSaveRoomName saveRoomName buttonWrap dn">
+                                                    <p href="javascript:void(0);" class="btnSaveRoomName button">保存</p>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="addFavoriteRoom buttonWrap">
+                                            <form action="">
+                                                <button class="btnFavoriteRoom button addedFavorite">
+                                                    {{Lang::get('const.common.room_favarite')}}
+                                                    <i class="fas fa-heart favoriteIcon dn"></i>
+                                                    <i class="far fa-heart favoriteIcon"></i>
+                                                </button>
+                                            </form>
+                                        </div><!--addFavoriteRoom buttonWrap-->
+                                        <ul class="roomMemberList">
+                                            <li>
+                                                <i class="fas fa-crown icnCrown"></i>
+                                                <p class="joinedRoomMember active">$メンバー名</p>
+                                                <div class="jscModalParent deleteRoomMember buttonWrap">
+                                                    <button class="jscBtnOpenModal btnDeleteRoomMember button">{{Lang::get('const.common.exit')}}</button>
+                                                    <div class="jscBackgroundLayer backgroundLayer dn"></div>
+                                                    <div class="jscActionModal actionModal dn">
+                                                        <p class="descriptionAction">
+                                                            メンバーを退出させますか？
+                                                        </p>
+                                                        <ul class="actionBtn">
+                                                            <li class="buttonWrap">
+                                                                <a href="javascript:void(0);" class="jscBtnCancel btnCancel button">{{Lang::get('const.common.cancel')}}</a>
+                                                            </li>
+                                                            <li class="buttonWrap">
+                                                                <a href="javascript:void(0);" class="btnSubmit button">{{Lang::get('const.common.exit')}}</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+                                        <div class="addMember">
+                                            <button class="jscBtnOpenModal">
+                                                <i class="fas fa-user-plus"></i>
+                                            </button>
+                                            <div for="addMember" class="jscBackgroundLayer backgroundLayer dn"></div>
+                                            <div class="jscActionModal actionModal editRoomModal dn">
+                                                <form action="">
+                                                    <dl class="createRoomConditions">
+                                                        <dt>{{Lang::get('const.common.new_room_name')}}</dt>
+                                                        <dd>
+                                                            <div class="createRoomMember">
+                                                                <ul class="createRoomMemberList">
+                                                                    <li>名字 名前<i class="fas fa-times"></i></li>
+                                                                    <li>名字 名前<i class="fas fa-times"></i></li>
+                                                                    <li>名字 名前<i class="fas fa-times"></i></li>
+                                                                </ul>
+                                                            </div>
+                                                            <p class="numberOfSelected">1 名</p>
+                                                        </dd>
+                                                    </dl>
+                                                    <div class="selectAll buttonWrap">
+                                                        <a href="javascript:void(0)" class="button">{{Lang::get('const.common.select_all')}}</a>
+                                                    </div>
+                                                    <ul class="selectMemberList">
+                                                        @foreach($users as $user)
+                                                            <li>
+                                                                <input type="checkbox" name="selectMember" id="userId{{$user['user_id']}}" class="selectMemberCheck">
+                                                                <label for="userId1" class="selectMember">{{$user['user_name']}}</label>
+                                                                <input type="hidden" name="user_id" value="{{$user['user_id']}}">{{$user['user_id']}}</input>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                    <div class="submitCreateRoom buttonWrap">
+                                                        <button class="btnSubmitCreateRoom button">招待</button>
+                                                    </div>
+                                                </form>
+                                            </div><!--END jscActionModal-->
+                                        </div><!--END addMember-->
+                                        <ul class="actionBtnList">
+                                            <li class="jscModalParent startChat buttonWrap">
+                                                <button for="startChatRoomId1" class="jscBtnOpenModal btnStartChat button">{{Lang::get('const.common.call')}}</button>
+                                                <div for="startChatRoomId1" class="jscBackgroundLayer backgroundLayer dn"></div>
+                                                <div class="jscActionModal actionModal dn">
+                                                    <p class="descriptionAction">
+                                                        ミーティングを開始しますか？
+                                                    </p>
+                                                    <ul class="actionBtn">
+                                                        <li class="buttonWrap">
+                                                            <a href="javascript:void(0);" class="jscBtnCancel btnCancel button">{{Lang::get('const.common.cancel')}}</a>
+                                                        </li>
+                                                        <li class="buttonWrap">
+                                                            <a href="javascript:void(0);" class="btnOk button">OK</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="jscModalParent deleteChatRoom buttonWrap">
+                                                <button for="deleteRoomId1" class="jscBtnOpenModal btnDeleteChatRoom button">削除</button>
+                                                <div for="deleteRoomId1" class="jscBackgroundLayer backgroundLayer dn"></div>
+                                                <div class="jscActionModal actionModal dn">
+                                                    <p class="descriptionAction">
+                                                        一度削除したルームは元に戻せません。<br>
+                                                        ルームを削除しますか？
+                                                    </p>
+                                                    <ul class="actionBtn">
+                                                        <li class="buttonWrap">
+                                                            <a href="javascript:void(0);" class="jscBtnCancel btnCancel button">キャンセル</a>
+                                                        </li>
+                                                        <li class="buttonWrap">
+                                                            <a href="javascript:void(0);" class="btnDelete button">削除</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="jscModalParent leaveChatRoom buttonWrap">
+                                                <label class="jscBtnOpenModal btnLeaveChatRoom button">退出</label>
+                                                <label class="jscBackgroundLayer backgroundLayer dn"></label>
+                                                <div class="jscActionModal actionModal dn">
+                                                    <p class="descriptionAction">
+                                                        <span>あなたはこのルームの管理者になっています。<br></span>ルームを退出しますか？
+                                                    </p>
+                                                    <ul class="actionBtn">
+                                                        <li class="buttonWrap">
+                                                            <a href="javascript:void(0);" class="jscBtnCancel btnCancel button">キャンセル</a>
+                                                        </li>
+                                                        <li class="buttonWrap">
+                                                            <a href="javascript:void(0);" class="btnSubmit button">退出</a>
+                                                        </li>
+                                                    </ul>
+                                                </div><!--END jscActionModal-->
+                                            </li>
+                                        </ul><!--actionBtnList-->
+                                    </div><!--END roomDetailInner-->
+                                </div><!--END jscRoomDetail -->
+                            </div><!--END roomDetailWrap buttonWrap-->
+                        </li>
+                    </ul>
+                </dd>
+                <!--参加ルーム-->
+                <dt>{{Lang::get('const.common.join_room')}}</dt>
+                <dd>
+                    <ul class="roomList">
+                        <li>
+                            <!--roomImg-->
+                            <p class="roomImg active" style="background-image: url('/images/{{$room['room_img']}}');">
+                                <span class="roomName">{{$room['room_name']}}</span>
+                                <i class="fas fa-heart favoriteIcon dn"></i>
+                                <i class="far fa-heart favoriteIcon"></i>
+                            </p>
+                            <!--END roomImg-->
+
+                            <div class="roomDetailWrap buttonWrap">
+                                <button class="jscBtnShowRoomDetail btnShowRoomDetail button">詳細を見る</button>
+                                <!--サイドバー-->
+                                <div class="jscRoomDetail roomDetail">
+                                    <div class="roomDetailInner">
+                                        <div class="closeRoomDetail">
+                                            <label for="roomId1" class="jscBtnCloseRoomDetail btnCloseRoomDetail">
+                                                <i class="fas fa-times"></i>
+                                            </label>
+                                        </div>
+                                        <div class="roomImg" style="background-image: url('/images/{{$room['room_img']}}');">
+                                            <button class="btnEditRoomImg">
+                                                <i class="fas fa-images icnEditRoomImg"></i>
+                                            </button>
+                                        </div>
+                                        <div class="editRoomNameWrap">
+                                            <form action="">
+                                                <input type="text" name="roomName" value="{{$room['room_name']}}" class="jscEditRoomName editRoomName" disabled>
+                                                <button class="jscBtnEditRoomName btnEditRoomName"><i class="fas fa-edit"></i></button>
+                                                <div class="jscSaveRoomName saveRoomName buttonWrap dn">
+                                                    <p href="javascript:void(0);" class="btnSaveRoomName button">保存</p>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="addFavoriteRoom buttonWrap">
+                                            <form action="">
+                                                <button class="btnFavoriteRoom button addedFavorite">
+                                                    {{Lang::get('const.common.room_favarite')}}
+                                                    <i class="fas fa-heart favoriteIcon dn"></i>
+                                                    <i class="far fa-heart favoriteIcon"></i>
+                                                </button>
+                                            </form>
+                                        </div><!--addFavoriteRoom buttonWrap-->
+                                        <ul class="roomMemberList">
+                                            <li>
+                                                <i class="fas fa-crown icnCrown"></i>
+                                                <p class="joinedRoomMember active">$メンバー名</p>
+                                                <div class="jscModalParent deleteRoomMember buttonWrap">
+                                                    <button class="jscBtnOpenModal btnDeleteRoomMember button">{{Lang::get('const.common.exit')}}</button>
+                                                    <div class="jscBackgroundLayer backgroundLayer dn"></div>
+                                                    <div class="jscActionModal actionModal dn">
+                                                        <p class="descriptionAction">
+                                                            メンバーを退出させますか？
+                                                        </p>
+                                                        <ul class="actionBtn">
+                                                            <li class="buttonWrap">
+                                                                <a href="javascript:void(0);" class="jscBtnCancel btnCancel button">{{Lang::get('const.common.cancel')}}</a>
+                                                            </li>
+                                                            <li class="buttonWrap">
+                                                                <a href="javascript:void(0);" class="btnSubmit button">{{Lang::get('const.common.exit')}}</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+                                        <div class="addMember">
+                                            <button class="jscBtnOpenModal">
+                                                <i class="fas fa-user-plus"></i>
+                                            </button>
+                                            <div for="addMember" class="jscBackgroundLayer backgroundLayer dn"></div>
+                                            <div class="jscActionModal actionModal editRoomModal dn">
+                                                <form action="">
+                                                    <dl class="createRoomConditions">
+                                                        <dt>{{Lang::get('const.common.new_room_name')}}</dt>
+                                                        <dd>
+                                                            <div class="createRoomMember">
+                                                                <ul class="createRoomMemberList">
+                                                                    <li>名字 名前<i class="fas fa-times"></i></li>
+                                                                    <li>名字 名前<i class="fas fa-times"></i></li>
+                                                                    <li>名字 名前<i class="fas fa-times"></i></li>
+                                                                </ul>
+                                                            </div>
+                                                            <p class="numberOfSelected">1 名</p>
+                                                        </dd>
+                                                    </dl>
+                                                    <div class="selectAll buttonWrap">
+                                                        <a href="javascript:void(0)" class="button">{{Lang::get('const.common.select_all')}}</a>
+                                                    </div>
+                                                    <ul class="selectMemberList">
+                                                        @foreach($users as $user)
+                                                            <li>
+                                                                <input type="checkbox" name="selectMember" id="userId{{$user['user_id']}}" class="selectMemberCheck">
+                                                                <label for="userId1" class="selectMember">{{$user['user_name']}}</label>
+                                                                <input type="hidden" name="user_id" value="{{$user['user_id']}}">{{$user['user_id']}}</input>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                    <div class="submitCreateRoom buttonWrap">
+                                                        <button class="btnSubmitCreateRoom button">招待</button>
+                                                    </div>
+                                                </form>
+                                            </div><!--END jscActionModal-->
+                                        </div><!--END addMember-->
+                                        <ul class="actionBtnList">
+                                            <li class="jscModalParent startChat buttonWrap">
+                                                <button for="startChatRoomId1" class="jscBtnOpenModal btnStartChat button">{{Lang::get('const.common.call')}}</button>
+                                                <div for="startChatRoomId1" class="jscBackgroundLayer backgroundLayer dn"></div>
+                                                <div class="jscActionModal actionModal dn">
+                                                    <p class="descriptionAction">
+                                                        ミーティングを開始しますか？
+                                                    </p>
+                                                    <ul class="actionBtn">
+                                                        <li class="buttonWrap">
+                                                            <a href="javascript:void(0);" class="jscBtnCancel btnCancel button">{{Lang::get('const.common.cancel')}}</a>
+                                                        </li>
+                                                        <li class="buttonWrap">
+                                                            <a href="javascript:void(0);" class="btnOk button">OK</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="jscModalParent deleteChatRoom buttonWrap">
+                                                <button for="deleteRoomId1" class="jscBtnOpenModal btnDeleteChatRoom button">削除</button>
+                                                <div for="deleteRoomId1" class="jscBackgroundLayer backgroundLayer dn"></div>
+                                                <div class="jscActionModal actionModal dn">
+                                                    <p class="descriptionAction">
+                                                        一度削除したルームは元に戻せません。<br>
+                                                        ルームを削除しますか？
+                                                    </p>
+                                                    <ul class="actionBtn">
+                                                        <li class="buttonWrap">
+                                                            <a href="javascript:void(0);" class="jscBtnCancel btnCancel button">キャンセル</a>
+                                                        </li>
+                                                        <li class="buttonWrap">
+                                                            <a href="javascript:void(0);" class="btnDelete button">削除</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="jscModalParent leaveChatRoom buttonWrap">
+                                                <label class="jscBtnOpenModal btnLeaveChatRoom button">退出</label>
+                                                <label class="jscBackgroundLayer backgroundLayer dn"></label>
+                                                <div class="jscActionModal actionModal dn">
+                                                    <p class="descriptionAction">
+                                                        <span>あなたはこのルームの管理者になっています。<br></span>ルームを退出しますか？
+                                                    </p>
+                                                    <ul class="actionBtn">
+                                                        <li class="buttonWrap">
+                                                            <a href="javascript:void(0);" class="jscBtnCancel btnCancel button">キャンセル</a>
+                                                        </li>
+                                                        <li class="buttonWrap">
+                                                            <a href="javascript:void(0);" class="btnSubmit button">退出</a>
+                                                        </li>
+                                                    </ul>
+                                                </div><!--END jscActionModal-->
+                                            </li>
+                                        </ul><!--actionBtnList-->
+                                    </div><!--END roomDetailInner-->
+                                </div><!--END jscRoomDetail -->
+                            </div><!--END roomDetailWrap buttonWrap-->
+                        </li>
+                    </ul>
+                </dd>
+
+            @endforeach
+        </dl>
     </main>
-  </div>
+</div>
 </body>
+</html>
