@@ -2,13 +2,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\RoomService;
 use Illuminate\Routing\Controller as BaseController;
 
 class RoomsController extends BaseController{
 
     public function top(){
 
-        return view('Room/top');
+        $rooms = new RoomService();
+        //ログインしているユーザの参加している部屋を取得
+        $room = $rooms->findRoomSearch();
+//dump($room);
+        //ユーザリストを取得
+        $userList = $rooms->getAllUserList();
+//dump($userList);
+        $viewAssign =[
+          'rooms' => $room,
+          'users' => $userList
+        ];
+        return view('Room/top',$viewAssign);
     }
 
     /**

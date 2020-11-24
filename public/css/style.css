@@ -1,11 +1,11 @@
 @charset "utf-8";
 html {
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 a,
 address,
@@ -52,33 +52,33 @@ ul,
 ol,
 li,
 iframe {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-size: 100%;
-    font-weight: normal;
-    word-break: break-all;
-    word-wrap: break-word;
-    vertical-align: middle;
-    border: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  font-weight: normal;
+  word-break: break-all;
+  word-wrap: break-word;
+  vertical-align: middle;
+  border: 0;
 }
 body {
-    min-width: 1100px;
-    background-color: #fff;
-    font-family: "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-    font-size: 14px;
-    color: #4a4a4a;
-    line-height: 1.8;
+  min-width: 1100px;
+  background-color: #fff;
+  font-family: "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 1.8;
 }
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 table {
-    border-spacing: 0;
-    border-collapse: collapse;
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 article,
 aside,
@@ -91,634 +91,721 @@ menu,
 nav,
 section,
 summary {
-    display: block;
+  display: block;
 }
 a {
-    color: #4a4a4a;
-    text-decoration: none;
-    background-color: transparent;
+  color: #4a4a4a;
+  text-decoration: none;
+  background-color: transparent;
 }
 a:active,
 a:hover {
-    outline-width: 0;
+  outline-width: 0;
 }
 b,
 strong {
-    font-weight: inherit;
-    font-weight: bold;
+  font-weight: inherit;
+  font-weight: bold;
 }
 img {
-    border-style: none;
+  border-style: none;
 }
 button,
 input,
 select,
 textarea {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    font: inherit;
-    vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  font: inherit;
+  vertical-align: middle;
 }
 optgroup {
-    font-weight: bold;
+  font-weight: bold;
 }
 button,
 input,
 select {
-    overflow: visible;
-    outline: none;
+  overflow: visible;
+  outline: none;
 }
 button:hover,
 input:hover,
 select:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 button,
 select {
-    text-transform: none;
+  text-transform: none;
 }
 [type=reset],
 [type=submit],
 button,
 html [type=button] {
-    -webkit-appearance: button;
+  -webkit-appearance: button;
 }
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-    padding: 0;
-    border: 0;
+  padding: 0;
+  border: 0;
 }
 button:-moz-focusring,
 input:-moz-focusring {
-    outline: 1px dotted ButtonText;
+  outline: 1px dotted ButtonText;
 }
 textarea {
-    overflow: auto;
+  overflow: auto;
 }
 button {
-    -webkit-appearance: none;
-    border: none;
+  -webkit-appearance: none;
+  border: none;
 }
 [type=checkbox],
 [type=radio] {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
 }
 a {
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 a:hover {
-    opacity: 0.7;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-    filter: alpha(opacity=70);
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
 }
 .cf:after {
-    content: '';
-    display: block;
-    height: 0;
-    clear: both;
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
 }
 .db {
-    display: block !important;
+  display: block !important;
 }
 .dn {
-    display: none !important;
+  display: none !important;
 }
 .backgroundLayer {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 100;
-}
-input[type="checkbox"]:checked ~ .backgroundLayer {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
 }
 .actionModal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 700px;
-    height: 500px;
-    padding: 30px 50px;
-    background: #ffffff;
-    border: 1px solid #777777;
-    border-radius: 10px;
-    color: #000000;
-    z-index: 110;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 250px;
+  padding: 30px 50px;
+  background: #ffffff;
+  border: 1px solid #777777;
+  border-radius: 10px;
+  color: #000000;
+  z-index: 110;
 }
-input[type="checkbox"]:checked ~ .actionModal {
-    display: block !important;
+.createRoomModal {
+  width: 700px;
+  height: 500px;
+}
+.editRoomModal {
+  width: 700px;
+  height: 450px;
+  text-align: left;
 }
 .buttonWrap {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 .button {
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
-    border-radius: 4px;
-    text-align: center;
-    cursor: pointer;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
 }
 .button:active {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 /* header */
 .header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 60px;
-    background-color: rgba(98, 79, 187, 0.9);
-    color: #ffffff;
-    z-index: 30;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 60px;
+  background-color: rgba(98, 79, 187, 0.9);
+  color: #ffffff;
+  z-index: 30;
 }
 .headerInner {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 80%;
-    max-width: 80%;
-    min-width: 310px;
-    height: 100%;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 80%;
+  max-width: 80%;
+  min-width: 310px;
+  height: 100%;
+  margin: 0 auto;
 }
 .createRoom {
-    height: 38px;
+  height: 38px;
 }
 .btnCreateRoom {
-    height: 38px;
-    padding: 0 18px;
-    background-color: #4c97f9;
-    border-bottom-color: #48536b;
-    font-size: 16px;
-    line-height: 36px;
+  height: 38px;
+  padding: 0 18px;
+  background-color: #4c97f9;
+  border-bottom-color: #48536b;
+  font-size: 16px;
+  line-height: 36px;
+  color: #ffffff;
 }
 .btnCreateRoom:active {
-    height: 36px;
+  height: 36px;
 }
 .accountName {
-    width: 160px;
-    margin-left: 10px;
-    font-size: 16px;
-    text-align: center;
+  width: 160px;
+  margin-left: 10px;
+  font-size: 16px;
+  text-align: center;
 }
 .accountName > .fa-user-tie {
-    margin-right: 5px;
-    font-size: 18px;
+  margin-right: 5px;
+  font-size: 18px;
 }
 .logOut > a {
-    display: inline-block;
-    width: 40px;
-    font-size: 18px;
-    color: #ffffff;
-    text-align: center;
+  display: inline-block;
+  width: 40px;
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
 }
 
 /* 新規ルーム作成モーダル */
 .createRoomConditions {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 .createRoomConditions > dt {
-    width: 20%;
-    padding-top: 5px;
+  width: 20%;
+  padding-top: 5px;
 }
 .createRoomConditions > dd {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    width: 80%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 80%;
 }
 .createRoomConditions > dt ~ dt,
 .createRoomConditions > dd ~ dd {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 .createRoomName {
-    width: 85%;
+  width: 85%;
 }
 .createRoomMember {
-    width: 85%;
-    height: 120px;
-    padding: 10px;
-    border: 1px solid #777777;
-    border-radius: 2px;
-    overflow: auto;
+  width: 85%;
+  height: 120px;
+  padding: 10px;
+  border: 1px solid #777777;
+  border-radius: 2px;
+  overflow: auto;
 }
 .createRoomMemberList {
-    margin-top: -10px;
-    margin-left: -10px;
-    font-size: 0;
+  margin-top: -10px;
+  margin-left: -10px;
+  font-size: 0;
 }
 .createRoomMemberList > li {
-    display: inline-block;
-    margin-top: 10px;
-    margin-left: 10px;
-    padding: 2px 5px;
-    background: #eeeeee;
-    border: 1px solid #777777;
-    border-radius: 4px;
-    font-size: 14px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 2px 5px;
+  background: #eeeeee;
+  border: 1px solid #777777;
+  border-radius: 4px;
+  font-size: 14px;
 }
 .createRoomMemberList > li > .fa-times {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 .numberOfSelected {
-    width: 15%;
-    padding-left: 20px;
-    text-align: right;
+  width: 15%;
+  padding-left: 20px;
+  text-align: right;
 }
 .selectAll {
-    justify-content: flex-end;
-    height: 36px;
-    margin-top: 30px;
+  justify-content: flex-end;
+  height: 36px;
+  margin-top: 30px;
 }
 .selectAll > a {
-    height: 36px;
-    padding: 0 18px;
-    background-color: #888888;
-    border-bottom-color: #333333;
-    line-height: 34px;
-    color: #ffffff;
-    transition: none;
+  height: 36px;
+  padding: 0 18px;
+  background-color: #888888;
+  border-bottom-color: #333333;
+  line-height: 34px;
+  color: #ffffff;
+  transition: none;
 }
 .selectAll > a:hover {
-    opacity: 1;
+  opacity: 1;
 }
 .selectAll > a:active {
-    height: 34px;
+  height: 34px;
 }
 .selectMemberList {
-    display: flex;
-    flex-wrap: wrap;
-    height: 120px;
-    margin-top: 20px;
-    overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  height: 120px;
+  margin-top: 20px;
+  overflow: auto;
 }
 .selectMemberList > li {
-    position: relative;
-    width: 20%;
+  position: relative;
+  width: 20%;
 }
 .selectMemberCheck {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 30%;
+  left: 0;
+  transform: translateY(-50%);
 }
 .selectMember {
-    display: block;
-    width: 100%;
-    height: 28px;
-    padding-left: 20px;
+  display: block;
+  width: 100%;
+  height: 28px;
+  padding-left: 20px;
 }
 .submitCreateRoom {
-    height: 38px;
-    margin-top: 20px;
+  height: 38px;
+  margin-top: 20px;
 }
 .btnSubmitCreateRoom {
-    height: 38px;
-    padding: 0 18px;
-    background-color: #4c97f9;
-    border-top: none;
-    border-right: none;
-    border-bottom-color: #48536b;
-    border-left: none;
-    font-size: 16px;
-    line-height: 36px;
-    color: #ffffff;
+  height: 38px;
+  padding: 0 18px;
+  background-color: #4c97f9;
+  border-top: none;
+  border-right: none;
+  border-bottom-color: #48536b;
+  border-left: none;
+  font-size: 16px;
+  line-height: 36px;
+  color: #ffffff;
 }
 .btnSubmitCreateRoom:active {
-    height: 36px;
+  height: 36px;
 }
 
 
 /* ルーム一覧 */
 .mainContentWrap {
-    padding: 80px 20px 20px;
+  padding: 80px 20px 20px;
 }
 .roomCategory > dt {
-    position: relative;
-    padding-left: 50px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #334488;
+  position: relative;
+  padding-left: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #334488;
 }
 .roomCategory > dt ~ dt {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 .roomCategory > dt:before,
 .roomCategory > dt:after {
-    content: "";
-    display: block;
-    height: 2px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #334488;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #334488;
 }
 .roomCategory > dt:before {
-    width: 40px;
-    left: 0;
+  width: 40px;
+  left: 0;
 }
 .roomCategory > dt:after {
-    right: 0;
-    left: calc(60px + 5em);
+  right: 0;
+  left: calc(60px + 5em);
 }
 .roomCategory > dd {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 .roomList {
-    margin-top: -20px;
-    margin-left: -20px;
-    font-size: 0;
+  margin-top: -20px;
+  margin-left: -20px;
+  font-size: 0;
 }
 .roomList > li {
-    display: inline-block;
-    margin-top: 20px;
-    margin-left: 20px;
-    font-size: 14px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 14px;
 }
 .roomImg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 250px;
-    height: 155px;
-    background-size: cover;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 250px;
+  height: 155px;
+  background-size: cover;
+  text-align: center;
 }
 .roomImg:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.4);
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.4);
 }
 .roomName {
-    position: relative;
-    display: inline-block;
-    overflow: auto;
-    max-height: 100%;
-    padding: 20px;
-    color: #ffffff;
-    z-index: 15;
+  position: relative;
+  display: inline-block;
+  overflow: auto;
+  max-height: 100%;
+  padding: 20px;
+  color: #ffffff;
+  z-index: 15;
 }
 .favoriteIcon {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 16px;
-    z-index: 15;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 16px;
+  z-index: 15;
 }
 .far.favoriteIcon {
-    color: #cccccc;
+  color: #cccccc;
 }
 .fas.favoriteIcon {
-    color: #f77272;
+  color: #f77272;
 }
 .roomDetailWrap {
-    height: 36px;
-    margin-top: 10px;
+  height: 36px;
+  margin-top: 10px;
 }
 .btnShowRoomDetail {
-    height: 36px;
-    padding: 0 18px;
-    background-color: #888888;
-    border-bottom-color: #333333;
-    line-height: 34px;
-    color: #ffffff;
+  height: 36px;
+  padding: 0 18px;
+  background-color: #888888;
+  border-bottom-color: #333333;
+  line-height: 34px;
+  color: #ffffff;
 }
 .btnShowRoomDetail:active {
-    height: 34px;
+  height: 34px;
 }
 .roomDetail {
-    width: 0;
-    position: fixed;
-    top: 60px;
-    right: -300px;
-    bottom: 0;
-    width: 300px;
-    padding: 25px;
-    background: #eeeeee;
-    z-index: 20;
-    transition: all 0.5s;
+  width: 0;
+  position: fixed;
+  top: 60px;
+  right: -300px;
+  bottom: 0;
+  width: 300px;
+  padding: 25px;
+  background: #eeeeee;
+  z-index: 50;
+  transition: all 0.5s;
+}
+.roomDetail.open {
+  right: 0;
 }
 .roomDetailInner {
-    position: relative;
-    height: 100%;
-    padding-bottom: 70px;
-}
-.showRoomDetail:checked ~ .roomDetail {
-    right: 0;
+  position: relative;
+  height: 100%;
+  padding-bottom: 70px;
 }
 .closeRoomDetail {
-    height: 26px;
-    text-align: right;
+  height: 26px;
+  text-align: right;
 }
 .btnCloseRoomDetail {
-    padding: 5px 7px;
-    border: 1px solid #888888;
-    border-radius: 4px;
+  padding: 5px 7px;
+  border: 1px solid #888888;
+  border-radius: 4px;
+  cursor: pointer;
 }
 .roomDetailInner > .roomImg,
 .editRoomNameWrap,
 .addFavoriteRoom,
 .roomMemberList,
 .addMember {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 .btnEditRoomImg {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: none;
-    z-index: 20;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: none;
+  z-index: 20;
 }
 .icnEditRoomImg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 18px;
-    color: #ffffff;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 18px;
+  color: #ffffff;
+  transform: translate(-50%, -50%);
 }
 .editRoomNameWrap {
-    position: relative;
-    padding-right: 30px;
+  position: relative;
+  padding-right: 50px;
 }
 .editRoomName {
-    width: 100%;
+  width: 100%;
 }
 .editRoomName:disabled {
-    height: 31px;
-    background: none;
-    border: none;
-    color: #000000;
-    text-overflow: ellipsis;
+  height: 31px;
+  background: none;
+  border: none;
+  color: #000000;
+  text-overflow: ellipsis;
 }
 .btnEditRoomName {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  background: none;
+  text-align: right;
+  cursor: pointer;
+}
+.saveRoomName {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  height: 25px;
+}
+.btnSaveRoomName {
+  width: 40px;
+  height: 25px;
+  background: #62cc7a;
+  border-bottom-color: #337141;
+}
+.btnSaveRoomName:active {
+  top: 50%;
+  height: 23px;
 }
 .addFavoriteRoom {
-    position: relative;
-    width: 140px;
-    height: 36px;
-    margin-right: auto;
-    margin-left: auto;
+  position: relative;
+  width: 140px;
+  height: 36px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .btnFavoriteRoom {
-    display: block;
-    width: 140px;
-    height: 36px;
-    padding: 0 18px;
-    background-color: #888888;
-    border-bottom-color: #333333;
-    line-height: 34px;
-    color: #ffffff;
+  display: block;
+  width: 140px;
+  height: 36px;
+  padding: 0 18px;
+  background-color: #888888;
+  border-bottom-color: #333333;
+  line-height: 34px;
+  color: #ffffff;
 }
 .btnFavoriteRoom:active {
-    height: 34px;
+  height: 34px;
 }
 .btnFavoriteRoom > .favoriteIcon {
-    position: absolute;
-    top: 9px;
-    right: 10px;
+  position: absolute;
+  top: 9px;
+  right: 10px;
 }
 .btnFavoriteRoom:active > .favoriteIcon {
-    top: 11px;
+  top: 11px;
 }
 .btnFavoriteRoom.addedFavorite {
-    background: #f77272;
-    border-bottom-color: #823737;
+  background: #f77272;
+  border-bottom-color: #823737;
 }
 .addedFavorite .fas.favoriteIcon {
-    color: #ffffff;
+  color: #ffffff;
 }
 .roomMemberList {
-    height: calc(100vh - 560px);
-    overflow: auto;
+  height: calc(100vh - 560px);
+  overflow: auto;
 }
 .roomMemberList > li {
-    display: flex;
-    position: relative;
-    padding-right: 50px;
-    padding-left: 38px;
+  display: flex;
+  position: relative;
+  padding-right: 50px;
+  padding-left: 38px;
 }
 .roomMemberList > li + li {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 .icnCrown {
-    position: absolute;
-    left: 0;
-    width: 18px;
-    padding: 5px 0;
-    color: #b9ad14;
+  position: absolute;
+  left: 0;
+  width: 18px;
+  padding: 5px 0;
+  color: #b9ad14;
 }
 .joinedRoomMember {
-    position: relative;
-    padding-left: 24px;
+  position: relative;
+  padding-left: 24px;
 }
 .joinedRoomMember:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 5px;
-    left: 0;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #cccccc;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #cccccc;
 }
 .joinedRoomMember.active:before {
-    background: #62cc7a;
+  background: #62cc7a;
 }
 .deleteRoomMember {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 .btnDeleteRoomMember {
-    width: 40px;
-    height: 25px;
-    background: #deda1f;
-    border-bottom-color: #737112;
+  width: 40px;
+  height: 25px;
+  background: #e8e790;
+  border-bottom-color: #908e2a;
 }
 .btnDeleteRoomMember:active {
-    height: 23px;
+  height: 23px;
 }
 .addMember {
-    text-align: right;
-    padding-right: 10px;
+  text-align: right;
+}
+.fa-user-plus {
+  display: inline-block;
+  width: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  cursor: pointer;
 }
 .actionBtnList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .actionBtnList > li {
-    height: 25px;
+  height: 25px;
 }
 .startChat {
-    width: 100%;
+  width: 100%;
 }
 .deleteChatRoom,
 .leaveChatRoom {
-    width: 48%;
-    margin-top: 10px;
+  width: 48%;
+  margin-top: 10px;
 }
 .actionBtnList > li > .button {
-    width: 100%;
-    height: 25px;
+  width: 100%;
+  height: 25px;
 }
 .actionBtnList > li > .button:active {
-    height: 23px;
+  height: 23px;
 }
 .btnStartChat {
-    background: #62cc7a;
-    border-bottom-color: #337141;
+  background: #62cc7a;
+  border-bottom-color: #337141;
 }
 .btnDeleteChatRoom {
-    background: #cc4247;
-    border-bottom-color: #792023;
-    color: #fff;
+  background: #cc4247;
+  border-bottom-color: #792023;
+  color: #fff;
 }
 .btnLeaveChatRoom {
-    background: #deda1f;
-    border-bottom-color: #737112;
+  background: #e8e790;
+  border-bottom-color: #908e2a;
+}
+
+
+
+.actionBtn {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.actionBtn > li {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 36px;
+  border-radius:4px;
+}
+.actionBtn > li > a {
+  width: 100px;
+  height: 38px;
+  transition: none;
+}
+.actionBtn > li + li {
+  margin-left: 10px;
+}
+.descriptionAction {
+  height: 100px;
+  text-align: center;
+}
+.btnCancel {
+  height: 38px;
+  background-color: #888888;
+  border-bottom-color: #333333;
+  color: #ffffff;
+}
+.btnSubmit {
+  background-color: #e8e790;
+  border-bottom-color: #908e2a;
+}
+.btnOk {
+  background-color: #62cc7a;
+  border-bottom-color: #337141;
+}
+.btnDelete {
+  background-color: #cc4247;
+  border-bottom-color: #792023;
+  color: #ffffff;
+}
+.btnCancel:active,
+.btnSubmit:active,
+.btnOk:active,
+.btnDelete:active {
+  height: 36px;
 }
 
 
@@ -727,78 +814,192 @@ input[type="checkbox"]:checked ~ .actionModal {
 
 
 /* チャットルーム */
-.chatRoomBox {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    justify-content: flex-start;
-    -webkit-align-items: stretch;
-    align-items: stretch;
+main {
+  display: flex;;
+}
+.chatRoomWrap {
+  position: relative;
+  width: calc(100% - 300px);
+  min-height: 768px;
 }
 .chatRoom {
-    width: calc(100vw - 300px);
-    font-size: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  text-align: center;
 }
-.chatMember {
-    display: inline-block;
-    margin: 0px;
-    width: 50%;
-    height: 50vh;
-    border: 1px solid grey;
-    font-size: 14px;
-    min-height: calc(768px / 2);
+.chatRoom > li {
+  display: inline-block;
+  position: relative;
+  width: 50%;
+  height: 50%;
+  border: 1px solid #cccccc;
+  overflow: hidden;
+}
+.chatRoom > li > video {
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  transform: translate(-50%);
+}
+.chatActionBtn {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 6px;
+  font-size: 0;
+}
+.chatActionBtn > li {
+  width: 70px;
+  height: 50px;
+  line-height: 1;
+  text-align: center;
+}
+.chatActionBtn > li + li {
+  position: relative;
+  margin-left: 2px;
+}
+.chatActionBtn > li + li:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -2px;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 20px;
+  background: #ffffff;
+}
+.chatActionBtn > li > a {
+  height: 50px;
+}
+.chatActionBtn > li > a > i {
+  font-size: 30px;
+  color: #ffffff;
+}
+.chatActionBtn > li > a:after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
+}
+button.chatActionModalIcn {
+  background-color: rgba(0,0,0,0.6);
 }
 .chatAndCaptionBox {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column-reverse;
-    flex-direction: column-reverse;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-align-items: stretch;
-    align-items: stretch;
-    width: 300px;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 300px;
+  height: 100vh;
+  min-height: 768px;
+}
+.chatAndCaption > .subttl {
+  padding-left: 5px;
+  background-color: rgba(98, 79, 187, 0.9);
+  border-bottom: 1px solid #cccccc;
+  color: #ffffff;
 }
 .chat {
-    height: calc(100vh - 50%);
-    border: 1px solid grey;
+  height: 40%;
+  border: 1px solid #cccccc;
 }
 .caption {
-    height: 100vh;
-    border: 1px solid lightgrey;
+  height: 100%;
+  border: 1px solid #cccccc;
 }
-.chat > p, .caption > p {
-    border-bottom: 1px solid gray;
-}
-.chatBox {
+.chat + .caption {
+  height: 60%;
 }
 .memberTalk {
-    padding: 10px;
+  height: calc(100% - 26px);
+  padding: 10px;
+  overflow: auto;
 }
-.memberInfo > img {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background-position: left top;
-    display: inline-block;
+.memberChatTxt > .memberTalk {
+  height: calc(100% - 42px);
 }
-.memberInfo > p {
-    display: inline-block;
-    padding-left: 5px;
+.memberTalk > li + li {
+  margin-top: 20px;
+}
+.own > .memberInfo {
+  text-align: right;
+}
+.memberImg {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-position: left top;
+}
+.memberName {
+  display: inline-block;
+  padding-left: 5px;
 }
 .memberTalkMessage {
-    display: inline-block;
-    padding: 5px;
-    border: 1px solid gray;
-    border-radius: 10px;
+  display: inline-block;
+  position: relative;
+  min-width: 40px;
+  margin-top: 14px;
+  padding: 5px 10px;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
 }
-.buttonList, .buttonList > ul, .buttonList > ul > li  {
-    display: inline-block;
+.own > .memberTalkMessage {
+  background: #f5ffc3;
 }
-.buttonList {
-    position: fixed;
-    left: 300px;
-    bottom: 50px;
+.memberTalkMessage:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -6px;
+  left: 12px;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-top: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  transform: rotate(-45deg);
+}
+.own > .memberTalkMessage:before {
+  left: auto;
+  right: 12px;
+  background: #f5ffc3;
+}
+.memberChatTxt {
+  position: relative;
+  height: calc(100% - 26px);
+}
+.regTxtBox {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 5px;
+  border-top: 1px solid #cccccc;
+  background-color: #ffffff;
+}
+.regTxt {
+  justify-content: space-between;
+  text-align: center;
+}
+.txt {
+  width: 240px;
+}
+.submitBtn {
+  width: 45px;
+  height: 31px;
+  background-color: #888888;
+  border-top: none;
+  border-right: none;
+  border-bottom-color: #333333;
+  border-left: none;
+  line-height: 29px;
+  color: #ffffff;
+}
+.submitBtn:active {
+  height: 29px;
 }
