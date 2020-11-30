@@ -38,14 +38,14 @@
                         @endforeach
                     </ul>
                     <div class="submitCreateRoom buttonWrap">
-                        <button class="btnSubmitCreateRoom button">ルーム作成</button>
+                        <button class="btnSubmitCreateRoom button">{{Lang::get('const.common.create_room')}}</button>
                     </div>
                 </form>
             </div>
         </div>
         <p class="accountName">
             <i class="fas fa-user-tie"></i>
-            <span>$アカウント名</span>
+            <span>{{Auth::user()}}</span>
         </p>
         <div class="logOut">
             <a href="javascript:void(0)">
