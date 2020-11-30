@@ -15,5 +15,13 @@ return [
         'cancel' => 'キャンセル',
         'add_room' => '作成ルーム',
         'join_room' => '参加ルーム',
+        'list_room' => 'ルーム一覧',
+        'app' => 'Vcaption',
+        'create_room' => 'ルーム作成',
+    ],
+    'room_mode' => [
+        'favarite' => 1,
+        'add' => 2,
+        'join' => 3,
     ]
 ];
