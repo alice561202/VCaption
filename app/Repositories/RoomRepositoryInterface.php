@@ -9,5 +9,5 @@ interface RoomRepositoryInterface
      * @var string $name
      * @return object
      */
-    public function findRoomSearch($name);
+    public function createRoom($name);
 }

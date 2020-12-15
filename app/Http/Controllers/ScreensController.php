@@ -6,13 +6,20 @@ use Illuminate\Routing\Controller as BaseController;
 
 class ScreensController extends BaseController{
 
-    public function chat(){
+    public function chat(Request $request){
 
+        //チャット一覧取得
+        $user = $request->user();
+        $others = \App\User::where('id', '!=', $user->id)->pluck('name', 'id');
+        return view('video_chat.index')->with([
+            'user' => collect($request->user()->only(['id', 'name'])),
+            'others' => $others
+        ]);
 
-        return view('Screen/chat');
+        return view('screen/chat');
     }
-
-    public function auth(Request $request) {    // Pusherの認証
+    // Pusherの認証
+    public function auth(Request $request){
 
         $user = $request->user();
         $socket_id = $request->socket_id;
@@ -29,6 +36,18 @@ class ScreensController extends BaseController{
         return response(
             $pusher->presence_auth($channel_name, $socket_id, $user->id)
         );
+    }
 
+    /**
+     * チャット
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function createMessage(Request $request){
+
+        dump($request);
+
+        //登録
+        return redirect('screen/chat');
     }
 }

@@ -6,8 +6,9 @@
     @include('header')
     <main class="mainContentWrap">
         <dl class="roomCategory">
-            @foreach($rooms as $room)
-                @if($room['favarite'] == Lang::get('const.room_mode.favarite') && isset($room['favarite']))
+            @php dump($rooms)@endphp
+            @foreach($rooms as $key =>$room)
+{{--                @if($room['favarite'] == Lang::get('const.room_mode.favarite') && isset($room['favarite']))--}}
                 <dt>{{Lang::get('const.common.room_favarite')}}</dt>
                 <dd>
                     <ul class="roomList">
@@ -15,7 +16,7 @@
                             <!--roomImg-->
                             <p class="roomImg active"
                                style="background-image: url('/images/{{$room['room_img']}}');">
-                                <span class="roomName">{{$room['room_name']}}</span>
+                                <span class="roomName">{{$room['creater_name']}}</span>
                                 <i class="fas fa-heart favoriteIcon dn"></i>
                                 <i class="far fa-heart favoriteIcon"></i>
                             </p>
@@ -39,13 +40,12 @@
                                         </div>
                                         <div class="editRoomNameWrap">
                                             <form action="">
-                                                <input type="text" name="roomName" value="{{$room['room_name']}}"
-                                                       class="jscEditRoomName editRoomName" disabled>
-                                                <button class="jscBtnEditRoomName btnEditRoomName"><i
-                                                        class="fas fa-edit"></i></button>
+                                                <input type="text" name="roomName" value="{{$room['creater_name']}}" class="jscEditRoomName editRoomName" disabled>
+                                                <button class="jscBtnEditRoomName btnEditRoomName">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
                                                 <div class="jscSaveRoomName saveRoomName buttonWrap dn">
-                                                    <p href="javascript:void(0);" class="btnSaveRoomName button">
-                                                        保存</p>
+                                                    <p href="javascript:void(0);" class="btnSaveRoomName button">保存</p>
                                                 </div>
                                             </form>
                                         </div>
@@ -72,12 +72,10 @@
                                                         </p>
                                                         <ul class="actionBtn">
                                                             <li class="buttonWrap">
-                                                                <a href="javascript:void(0);"
-                                                                   class="jscBtnCancel btnCancel button">{{Lang::get('const.common.cancel')}}</a>
+                                                                <a href="javascript:void(0);" class="jscBtnCancel btnCancel button">{{Lang::get('const.common.cancel')}}</a>
                                                             </li>
                                                             <li class="buttonWrap">
-                                                                <a href="javascript:void(0);"
-                                                                   class="btnSubmit button">{{Lang::get('const.common.exit')}}</a>
+                                                                <a href="javascript:void(0);" class="btnSubmit button">{{Lang::get('const.common.exit')}}</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -113,13 +111,9 @@
                                                     <ul class="selectMemberList">
                                                         @foreach($users as $user)
                                                             <li>
-                                                                <input type="checkbox" name="selectMember"
-                                                                       id="userId{{$user['user_id']}}"
-                                                                       class="selectMemberCheck">
-                                                                <label for="userId1"
-                                                                       class="selectMember">{{$user['user_name']}}</label>
-                                                                <input type="hidden" name="user_id"
-                                                                       value="{{$user['user_id']}}">{{$user['user_id']}}</input>
+                                                                <input type="checkbox" name="selectMember" id="userId{{$user['user_id']}}" class="selectMemberCheck">
+                                                                <label for="userId1" class="selectMember">{{$user['user_name']}}</label>
+                                                                <input type="hidden" name="user_id" value="{{$user['user_id']}}">{{$user['user_id']}}</input>
                                                             </li>
                                                         @endforeach
                                                     </ul>
@@ -141,12 +135,10 @@
                                                     </p>
                                                     <ul class="actionBtn">
                                                         <li class="buttonWrap">
-                                                            <a href="javascript:void(0);"
-                                                               class="jscBtnCancel btnCancel button">{{Lang::get('const.common.cancel')}}</a>
+                                                            <a href="javascript:void(0);" class="jscBtnCancel btnCancel button">{{Lang::get('const.common.cancel')}}</a>
                                                         </li>
                                                         <li class="buttonWrap">
-                                                            <a href="javascript:void(0);"
-                                                               class="btnOk button">OK</a>
+                                                            <a href="javascript:void(0);" class="btnOk button" id="call">OK</a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -198,7 +190,7 @@
                         </li>
                     </ul>
                 </dd>
-                @elseif($room['favarite'] == Lang::get('const.common.add_room') && isset($room['favarite']))
+{{--                @elseif($room['favarite'] == Lang::get('const.common.add_room') && isset($room['favarite']))--}}
                 <!--作成ルーム-->
                 <dt>{{Lang::get('const.common.add_room')}}</dt>
                 <dd>
@@ -207,7 +199,7 @@
                             <!--roomImg-->
                             <p class="roomImg active"
                                style="background-image: url('/images/{{$room['room_img']}}');">
-                                <span class="roomName">{{$room['room_name']}}</span>
+                                <span class="roomName">{{$room['creater_name']}}</span>
                                 <i class="fas fa-heart favoriteIcon dn"></i>
                                 <i class="far fa-heart favoriteIcon"></i>
                             </p>
@@ -231,7 +223,7 @@
                                         </div>
                                         <div class="editRoomNameWrap">
                                             <form action="">
-                                                <input type="text" name="roomName" value="{{$room['room_name']}}"
+                                                <input type="text" name="roomName" value="{{$room['creater_name']}}"
                                                        class="jscEditRoomName editRoomName" disabled>
                                                 <button class="jscBtnEditRoomName btnEditRoomName"><i
                                                         class="fas fa-edit"></i></button>
@@ -389,7 +381,7 @@
                         </li>
                     </ul>
                 </dd>
-                @elseif($room['favarite'] == Lang::get('const.common.join_room') && isset($room['favarite']))
+{{--                @elseif($room['favarite'] == Lang::get('const.common.join_room') && isset($room['favarite']))--}}
                 <!--参加ルーム-->
                 <dt>{{Lang::get('const.common.join_room')}}</dt>
                 <dd>
@@ -398,7 +390,7 @@
                             <!--roomImg-->
                             <p class="roomImg active"
                                style="background-iåmage: url('/images/{{$room['room_img']}}');">
-                                <span class="roomName">{{$room['room_name']}}</span>
+                                <span class="roomName">{{$room['creater_name']}}</span>
                                 <i class="fas fa-heart favoriteIcon dn"></i>
                                 <i class="far fa-heart favoriteIcon"></i>
                             </p>
@@ -422,7 +414,7 @@
                                         </div>
                                         <div class="editRoomNameWrap">
                                             <form action="">
-                                                <input type="text" name="roomName" value="{{$room['room_name']}}"
+                                                <input type="text" name="roomName" value="{{$room['creater_name']}}"
                                                        class="jscEditRoomName editRoomName" disabled>
                                                 <button class="jscBtnEditRoomName btnEditRoomName"><i
                                                         class="fas fa-edit"></i></button>
@@ -524,12 +516,10 @@
                                                     </p>
                                                     <ul class="actionBtn">
                                                         <li class="buttonWrap">
-                                                            <a href="javascript:void(0);"
-                                                               class="jscBtnCancel btnCancel button">{{Lang::get('const.common.cancel')}}</a>
+                                                            <a href="javascript:void(0);" class="jscBtnCancel btnCancel button">{{Lang::get('const.common.cancel')}}</a>
                                                         </li>
                                                         <li class="buttonWrap">
-                                                            <a href="javascript:void(0);"
-                                                               class="btnOk button">OK</a>
+                                                            <a href="javascript:void(0);" class="btnOk button" id="call">OK</a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -581,10 +571,19 @@
                         </li>
                     </ul>
                 </dd>
-                @endif
+{{--                @endif--}}
             @endforeach
         </dl>
     </main>
 </div>
+<form method="GET" action="/screen/chat" id="room">
+    @csrf
+    <input type="hidden" name="roomId" value="1">
+</form>
+<script>
+    $('#call').on('click',function(){
+        $('#room').submit();
+    })
+</script>
 </body>
 </html>
