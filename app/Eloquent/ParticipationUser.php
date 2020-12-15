@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
  * @package app\Eloquent
  * @mixin \Eloquent
  */
-class Room extends Model
+class ParticipationUser extends Model
 {
     use Notifiable;
 
@@ -19,7 +19,8 @@ class Room extends Model
      * @var array
      */
     protected $fillable = [
-        'room_id', 'creater_name','creater_id' ,'room_img'
+        'user_id','room__id','active_flg','favorite_flg'
     ];
 
 }
+

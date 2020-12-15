@@ -21,10 +21,14 @@ Route::get('/', function () {
 Route::get('/room/top', 'RoomsController@top');
 Route::get('/room/detail', 'RoomsController@detail');
 Route::get('/room/favarite', 'RoomsController@favarite');
-Route::get('/room/add', 'RoomsController@add');
+Route::post('/room/add', 'RoomsController@add');
 Route::get('/room/delete', 'RoomsController@delete');
 Route::get('/room/sort', 'RoomsController@sort');
-Route::get('/room/logout    ', 'RoomsController@logout');
+Route::get('/room/logout', 'RoomsController@logout');
 
 //chat
 Route::get('/screen/chat', 'ScreensController@chat');
+Route::get('/screen/message', 'ScreensController@createMessage');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

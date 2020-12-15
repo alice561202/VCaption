@@ -1,8 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Services\RoomService;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
 class RoomsController extends BaseController{
@@ -12,9 +13,8 @@ class RoomsController extends BaseController{
         $rooms = new RoomService();
         //ログインしているユーザの参加している部屋を取得
         $room = $rooms->findRoomSearch();
-//dump($room);
         //ユーザリストを取得
-        $userList = $rooms->getAllUserList();
+            $userList = $rooms->getAllUserList();
 //dump($userList);
         $viewAssign =[
           'rooms' => $room,
@@ -42,8 +42,12 @@ class RoomsController extends BaseController{
     /**
      * ルーム作成
      */
-    public function add(){
-        return view('Room/top');
+    public function add(Request $request){
+        dump($request);
+        $rooms = new RoomService();
+        $rooms->createRoom($request);
+
+        return redirect('room/top');
     }
 
     /**
